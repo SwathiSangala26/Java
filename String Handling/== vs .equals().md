@@ -77,7 +77,7 @@ System.out.println(a.equals(b));   // true
 
 ## 5️⃣ How `.equals()` works internally (IMPORTANT)
 
-In `String` class:
+In java.lang.Object
 
 * `.equals()` is **overridden**
 * It compares:
