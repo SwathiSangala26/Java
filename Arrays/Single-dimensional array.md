@@ -4,7 +4,7 @@
 • Stores **multiple values of the same data type**
 • Elements stored in **contiguous memory locations**
 • Accessed using **zero-based index**
-java.util.Arrays
+(java.util.Arrays)
 
 ---
 
