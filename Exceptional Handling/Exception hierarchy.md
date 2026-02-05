@@ -212,9 +212,10 @@ Placement:
 
 ---
 
-13. JVM Perspective
+## 13. JVM Perspective
 
-• Exception objects are created on heap
-• Stack trace is maintained internally by JVM
-• Runtime bounds checking is performed before array access
-• Unhandled exceptions terminate the executing thread
+- Exception objects are created on heap
+- Stack trace is maintained internally by JVM
+- Runtime bounds checking is performed before array access
+- Unhandled exceptions terminate the executing thread
+
