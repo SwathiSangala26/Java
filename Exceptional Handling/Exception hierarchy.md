@@ -218,4 +218,3 @@ Placement:
 - Stack trace is maintained internally by JVM
 - Runtime bounds checking is performed before array access
 - Unhandled exceptions terminate the executing thread
-
