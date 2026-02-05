@@ -4,9 +4,20 @@
 • Stores **multiple values of the same data type**
 • Elements stored in **contiguous memory locations**
 • Accessed using **zero-based index**
-(java.util.Arrays)
 
 ---
+
+**java.util.Arrays**
+
+Overview
+
+• Arrays is a final utility class in java.util package
+• Provides static helper methods to work with arrays
+• Operates on primitive arrays and object arrays
+• Cannot be instantiated
+
+import java.util.Arrays;
+
 
 ## 2. Single-Dimensional Array
 
