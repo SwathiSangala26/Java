@@ -1,36 +1,40 @@
-## Array – Core Definition
+## 1. Definition
 
-• Array is a collection of elements of the **same data type**
-• Stored in **continuous memory locations**
-• Accessed using **index**
-• Size is **fixed** once created
-• Index starts from **0**
+• Array is a **fixed-size, indexed, linear data structure**
+• Stores **multiple values of the same data type**
+• Elements stored in **contiguous memory locations**
+• Accessed using **zero-based index**
 
 ---
 
-## Single-Dimensional Array
+## 2. Single-Dimensional Array
 
-• Linear structure with one index
-• Elements arranged sequentially
-• Example:
+• Uses **one index**
+• Represents a linear list
+• Syntax:
 
 ```java
-int[] arr = {10, 20, 30};
+int[] arr;
 ```
 
 ---
 
-## Array as an Object
+## 3. Array as an Object
 
 • Arrays are **objects in Java**
+• Created using `new` keyword
 • Stored in **heap memory**
-• Reference variable stored in **stack**
-• Primitive arrays store values
-• Object arrays store references
+• Reference stored in **stack**
+
+```
+STACK                     HEAP
+-----                     ----
+arr  ───────────────►  [ array object ]
+```
 
 ---
 
-## Array Declaration
+## 4. Declaration
 
 ```java
 int[] arr;
@@ -38,220 +42,307 @@ int arr[];
 ```
 
 • Both valid
-• `int[] arr` is preferred (type clarity)
+• `int[] arr` preferred for readability
 
 ---
 
-## Array Initialization
+## 5. Initialization
 
 ```java
 arr = new int[5];
 ```
 
-• Memory allocated in heap
-• Default values assigned by JVM
+• JVM allocates memory
+• Default values assigned
+• Size cannot be changed later
 
 ---
 
-## Declaration and Initialization Together
+## 6. Declaration + Initialization
 
 ```java
-int[] arr = {1, 2, 3};
+int[] arr = {10, 20, 30};
 ```
 
-• Size determined automatically
-• Values assigned directly
+• Size inferred automatically
+• Values stored sequentially
 
 ---
 
-## Default Values
+## 7. Default Values
 
 • int → 0
+• float → 0.0
 • double → 0.0
 • boolean → false
 • char → '\u0000'
 • Object → null
 
+Reason:
+• JVM avoids garbage values
+
 ---
 
-## Null in Arrays
+## 8. Null in Arrays
 
-• Only **object arrays** can store `null`
+• Only **reference-type arrays** can store `null`
 • Primitive arrays cannot store `null`
-• `null` represents absence of object reference
+• `null` represents **absence of object**
 
 ---
 
-## Array Length
+## 9. Array Length
 
-• `length` gives number of elements
-• Accessed as a **property**
+• Length = number of elements
+• Accessed using:
 
 ```java
 arr.length
 ```
 
-• Not a method
+• `length` is a **property**, not method
 
 ---
 
-## Index Rules
+## 10. Index Rules
 
-• Index range: `0` to `length - 1`
-• Negative index → runtime exception
-• Index ≥ length → runtime exception
+• Index starts from **0**
+• Last index = `length - 1`
 
----
-
-## Why Index Starts from 0
-
-• Index represents offset from base address
-• Faster address calculation
-• Direct memory mapping
+```
+Index:   0   1   2
+Array:  [A] [B] [C]
+```
 
 ---
 
-## Fixed Size Nature
+## 11. Why Index Starts from 0
 
-• Size decided at creation time
-• JVM allocates contiguous memory
-• Resizing requires new allocation and copy
-• Size cannot be changed
+• Index = offset from base address
+• Address formula:
 
----
+```
+address = base + (index × size)
+```
 
-## Access Time Complexity
-
-• O(1) for accessing any element
-• Direct index-based access
+• Zero offset = first element
+• Faster memory access
 
 ---
 
-## Traversing Array – for Loop
+## 12. Fixed Size Nature
+
+• Size decided at creation
+• JVM allocates **single contiguous block**
+• Resizing requires:
+– New array
+– Copy elements
+• Hence resizing not allowed
+
+---
+
+## 13. Accessing Elements
 
 ```java
-for (int i = 0; i < arr.length; i++) {
+arr[0];
+arr[2];
+```
+
+• Time complexity: **O(1)**
+
+---
+
+## 14. Traversing — for Loop
+
+```java
+for(int i = 0; i < arr.length; i++) {
     System.out.println(arr[i]);
 }
 ```
 
-• Index-based traversal
-• Full control over positions
-• Supports forward and reverse traversal
+• Index available
+• Full control
+• Can traverse forward/backward
 
 ---
 
-## Traversing Array – Enhanced for-Loop
+## 15. Traversing — Enhanced for-Loop
 
 ```java
-for (int value : arr) {
+for(int value : arr) {
     System.out.println(value);
 }
 ```
 
-• Simplified sequential traversal
-• No index handling
-• Value-based access
-• Best for read-only operations
+• Sequential traversal
+• No index visibility
+• Cleaner syntax
+• Best for read-only access
 
 ---
 
-## Enhanced for-Loop Limitations
+## 16. Enhanced for-Loop Internals
 
-• Index not accessible
-• Cannot skip indices
-• Cannot traverse in reverse easily
-• Not suitable for index-based logic
+• JVM internally uses index
+• Iterates from `0` to `length - 1`
+• Value variable gets **copy of element**
 
 ---
 
-## Modifying Array Elements
-
-• Use normal `for` loop
-• Enhanced for-loop works on copies of values
-
-Correct way:
+## 17. Why Enhanced for-Loop Cannot Modify Array
 
 ```java
-for (int i = 0; i < arr.length; i++) {
-    arr[i] *= 2;
+for(int v : arr) {
+    v = v * 2;   // does NOT change array
 }
+```
+
+• `v` is a copy
+• Actual array element unchanged
+
+Correct approach:
+
+```java
+arr[i] = arr[i] * 2;
 ```
 
 ---
 
-## Runtime Exceptions
+## 18. Runtime Exceptions
 
-• `ArrayIndexOutOfBoundsException`
-– Accessing invalid index
-• `NullPointerException`
-– Accessing array through null reference
+### ArrayIndexOutOfBoundsException
 
----
+• Index < 0
+• Index ≥ length
 
-## Passing Array to Methods
+### NullPointerException
 
-• Arrays are passed by **reference value**
-• Changes inside method affect original array
+• Array reference is null
 
 ---
 
-## Returning Array from Methods
+## 19. Empty Array vs Null Array
+
+### Empty Array
+
+```java
+int[] arr = new int[0];
+```
+
+```
+STACK → arr
+HEAP  → array object
+        length = 0
+        memory allocated
+```
+
+• Object exists
+• No elements
+
+---
+
+### Null Array
+
+```java
+int[] arr = null;
+```
+
+```
+STACK → arr = null
+HEAP  → no array object
+```
+
+• No object
+• No memory
+
+---
+
+## 20. Passing Array to Method
+
+• Reference passed by value
+• Changes affect original array
+
+```
+method(arr)
+└── both point to same heap object
+```
+
+---
+
+## 21. Returning Array from Method
 
 • Arrays can be returned like objects
 
 ---
 
-## Copying Arrays
+## 22. Copying Arrays
 
-• Using loop
+• Manual loop
 • `System.arraycopy()`
 • `Arrays.copyOf()`
 
 ---
 
-## Empty vs Null Array
+## 23. Time Complexity
 
-• Empty array → size = 0, memory allocated
-• Null array → no memory allocated
+• Access → O(1)
+• Traversal → O(n)
+• Search (linear) → O(n)
 
 ---
 
-## JVM Internal Handling
+## 24. Space Complexity
 
-• Arrays stored as objects in heap
+• O(n)
+
+---
+
+## 25. JVM Internal Handling
+
+• Array treated as object
 • Length stored internally
-• Default values assigned automatically
-• Runtime bounds checking performed
+• Default initialization
+• Runtime bounds checking
+
+```
+Heap Array Object:
+┌───────────────┐
+│ length        │
+│ element[0]    │
+│ element[1]    │
+│ element[n-1]  │
+└───────────────┘
+```
 
 ---
 
-## Performance Characteristics
+## 26. Performance Characteristics
 
-• Fast access due to contiguous memory
-• Low memory overhead
-• No resizing cost
+• Faster than collections
+• Direct memory access
+• No resizing overhead
+• Less memory usage
 
 ---
 
-## Array vs ArrayList (Quick Notes)
+## 27. Array vs ArrayList (Summary)
 
 • Array → fixed size, faster
-• ArrayList → dynamic size, slower
+• ArrayList → dynamic, slower
 • Array supports primitives
 • ArrayList stores objects only
 
 ---
 
-## When to Use Arrays
+## 28. When to Use Arrays
 
 • Fixed size data
-• Performance-critical code
-• Simple sequential data
+• Performance critical
+• Low overhead requirement
 
 ---
 
-## When to Avoid Arrays
+## 29. When Not to Use Arrays
 
 • Dynamic resizing needed
-• Frequent insert/delete operations
+• Frequent insert/delete
