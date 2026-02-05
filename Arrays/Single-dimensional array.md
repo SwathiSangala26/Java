@@ -18,7 +18,6 @@ Overview
 
 import java.util.Arrays;
 
-
 ## 2. Single-Dimensional Array
 
 • Uses **one index**
