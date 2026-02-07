@@ -1,39 +1,41 @@
-## 🟢 **CUSTOM EXCEPTIONS IN JAVA**
+## 🟢 Custom Exceptions
+
+* Custom exceptions are **user-defined exceptions**
+* Used to represent **application-specific / business errors**
+* Improve **readability, clarity, and maintainability**
+* Help avoid using generic exceptions like `Exception` or `RuntimeException`
+
+### Examples where custom exceptions are useful
+
+* Invalid age
+* Insufficient balance
+* User not found
+* Order processing failure
 
 ---
 
-• Custom exceptions are **user-defined exceptions**
-• Used to represent **application-specific / business errors**
-• Improve **readability, clarity, and maintainability**
-• Help avoid using generic exceptions like `Exception` or `RuntimeException`
+## 🟢 How to Create a Custom Exception
 
-Examples of where custom exceptions are useful
-• Invalid age
-• Insufficient balance
-• User not found
-• Order processing failure
+* Custom exceptions are created by **extending an existing exception class**
+* Two main choices are available
 
----
+### Option 1: Extend `RuntimeException`
 
-## 🟢 **HOW TO CREATE A CUSTOM EXCEPTION**
+* Creates an **unchecked custom exception**
+* Compiler does **not** force handling
 
----
+### Option 2: Extend `Exception`
 
-• Custom exceptions are created by **extending an existing exception class**
-• Two main choices are available
-
-👉 Extend `RuntimeException` → **Unchecked custom exception**
-👉 Extend `Exception` → **Checked custom exception**
+* Creates a **checked custom exception**
+* Compiler **forces handling or declaration**
 
 ---
 
-## 🟢 **CUSTOM UNCHECKED EXCEPTION**
+## 🟢 Custom Unchecked Exception
 
----
-
-• Created by extending `RuntimeException`
-• Compiler does **not** force handling
-• Best suited for **validation errors and programming mistakes**
+* Created by extending `RuntimeException`
+* Compiler does **not** enforce try-catch or throws
+* Best used for **validation errors and programming mistakes**
 
 ### Custom unchecked exception class
 
@@ -44,8 +46,6 @@ class InvalidAgeException extends RuntimeException {
     }
 }
 ```
-
----
 
 ### Using the custom unchecked exception
 
@@ -58,8 +58,6 @@ void vote(int age) {
 }
 ```
 
----
-
 ### Caller without handling
 
 ```java
@@ -69,12 +67,10 @@ public static void main(String[] args) {
 }
 ```
 
-• Code compiles successfully
-• Exception is thrown at runtime
-• No catch block found
-• Program terminates
-
----
+* Code compiles successfully
+* Exception is thrown at runtime
+* No catch block is found
+* Program terminates
 
 ### Caller with handling (optional)
 
@@ -88,24 +84,22 @@ public static void main(String[] args) {
 }
 ```
 
-• Exception is caught
-• Program continues normally
+* Exception is caught
+* Program continues normally
+
+### Key points
+
+* `throws` is **not required**
+* try-catch is **optional**
+* Used mainly for **input validation and logical errors**
 
 ---
 
-• `throws` is **not required**
-• try-catch is **optional**
-• Recommended for input validation and logical errors
+## 🟢 Custom Checked Exception
 
----
-
-## 🟢 **CUSTOM CHECKED EXCEPTION**
-
----
-
-• Created by extending `Exception`
-• Compiler **forces handling or declaration**
-• Used for **business rules and recoverable conditions**
+* Created by extending `Exception`
+* Compiler **forces handling or declaration**
+* Best used for **business rules and recoverable conditions**
 
 ### Custom checked exception class
 
@@ -116,8 +110,6 @@ class InsufficientBalanceException extends Exception {
     }
 }
 ```
-
----
 
 ### Using the custom checked exception
 
@@ -132,8 +124,6 @@ void withdraw(double amount, double balance)
 }
 ```
 
----
-
 ### Caller without handling or declaring
 
 ```java
@@ -142,10 +132,8 @@ public static void main(String[] args) {
 }
 ```
 
-• Compilation fails
-• Checked exception must be handled or declared
-
----
+* Compilation fails
+* Checked exception must be handled or declared
 
 ### Caller with try-catch
 
@@ -159,10 +147,8 @@ public static void main(String[] args) {
 }
 ```
 
-• Exception is handled
-• Program continues
-
----
+* Exception is handled
+* Program continues
 
 ### Caller with throws
 
@@ -173,25 +159,23 @@ public static void main(String[] args)
 }
 ```
 
-• Code compiles successfully
-• Exception reaches JVM
-• Program terminates
+* Code compiles successfully
+* Exception propagates to JVM
+* Program terminates
+
+### Key points
+
+* `throws` is **mandatory** for checked custom exceptions
+* Compiler strictly enforces this rule
 
 ---
 
-• `throws` is **mandatory** for checked custom exceptions
-• Compiler strictly enforces this rule
+## 🟢 Throw and Throws with Custom Exceptions
 
----
+* `throw` is used to **create and throw** the custom exception object
+* `throws` is used to **declare** the exception in the method signature
 
-## 🟢 **THROW AND THROWS WITH CUSTOM EXCEPTIONS**
-
----
-
-• `throw` is used to **create and throw** a custom exception object
-• `throws` is used to **declare** the exception in the method signature
-
-Example
+### Example
 
 ```java
 void test() throws InvalidAgeException {
@@ -201,15 +185,13 @@ void test() throws InvalidAgeException {
 
 ---
 
-## 🟢 **EXCEPTION CHAINING WITH CUSTOM EXCEPTIONS**
+## 🟢 Exception Chaining with Custom Exceptions
 
----
+* Used to wrap a **lower-level exception** inside a custom exception
+* Preserves the **original cause**
+* Common in layered applications (service → controller → UI)
 
-• Used to wrap a **lower-level exception** inside a custom exception
-• Preserves the **original cause**
-• Common in layered applications
-
-Custom exception with cause
+### Custom exception with cause
 
 ```java
 class BusinessException extends Exception {
@@ -219,7 +201,7 @@ class BusinessException extends Exception {
 }
 ```
 
-Usage
+### Usage
 
 ```java
 void process() throws BusinessException {
@@ -231,18 +213,16 @@ void process() throws BusinessException {
 }
 ```
 
-• Original exception is preserved
-• Debugging becomes easier
+* Original exception is preserved
+* Debugging becomes easier
 
 ---
 
-## 🟢 **BEST PRACTICES FOR CUSTOM EXCEPTIONS**
+## 🟢 Best Practices for Custom Exceptions
 
----
-
-• Use **meaningful and specific names**
-• Prefer unchecked custom exceptions for validation errors
-• Prefer checked custom exceptions for recoverable business logic
-• Avoid throwing generic `Exception`
-• Always include a clear error message
-• Use exception chaining when wrapping exceptions
+* Use **meaningful and specific names**
+* Prefer unchecked custom exceptions for validation errors
+* Prefer checked custom exceptions for recoverable business logic
+* Avoid throwing generic `Exception`
+* Always provide clear error messages
+* Use exception chaining when wrapping exceptions
