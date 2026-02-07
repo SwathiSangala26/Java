@@ -1,4 +1,4 @@
-## 1. Definition
+## 🟢 Definition
 
 • Exception handling is a mechanism to **handle runtime errors**
 • Prevents **abnormal termination** of program
@@ -10,7 +10,7 @@
 
 ---
 
-## 2. What is an Exception?
+## 🟢 What is an Exception?
 
 • An exception is an **unexpected event at runtime**
 • Occurs during program execution
@@ -24,7 +24,7 @@ Examples:
 
 ---
 
-## 3. `try` Block
+## 🟢 `try` Block
 
 • Contains **risky code**
 • JVM monitors this block
@@ -47,7 +47,7 @@ Rules:
 
 ---
 
-## 4. `catch` Block
+## 🟢 `catch` Block
 
 • Handles exception thrown from `try`
 • Executes only when exception occurs
@@ -68,7 +68,7 @@ Key points:
 
 ---
 
-## 5. `finally` Block
+## 🟢 `finally` Block
 
 • Executes **always**
 • Executes whether exception occurs or not
@@ -89,7 +89,7 @@ Common uses:
 
 ---
 
-## 6. Complete try–catch–finally Example
+## 🟢 Complete try–catch–finally Example
 
 ```java
 try {
@@ -109,7 +109,7 @@ Execution:
 
 ---
 
-## 7. Execution Flow
+## 🟢 Execution Flow
 
 ### No Exception
 
@@ -131,7 +131,7 @@ Execution:
 
 ---
 
-## 8. Important `finally` Rules
+## 🟢 Important `finally` Rules
 
 • Executes even if `return` is used
 • Executes even if exception is thrown
@@ -152,7 +152,7 @@ Reason:
 
 ---
 
-## 9. Multiple `catch` Blocks
+## 🟢 Multiple `catch` Blocks
 
 • Used to handle **different exception types**
 • JVM checks `catch` blocks **top to bottom**
@@ -172,7 +172,7 @@ try {
 
 ---
 
-## 10. Order of Multiple `catch` Blocks
+## 🟢 Order of Multiple `catch` Blocks
 
 Rule:
 • **Child exception first**
@@ -198,7 +198,7 @@ Reason:
 
 ---
 
-## 11. Generic `catch (Exception e)`
+## 🟢 Generic `catch (Exception e)`
 
 • Handles all exceptions
 • Should be placed **last**
@@ -214,7 +214,7 @@ catch (Exception e) {
 
 ---
 
-## 12. Can We Have try Without catch?
+## 🟢 Can We Have try Without catch?
 
 Allowed:
 
@@ -239,7 +239,7 @@ Reason:
 
 ---
 
-## 13. Nested try–catch
+## 🟢 Nested try–catch
 
 • `try` inside another `try`
 • Used for fine-grained exception handling
@@ -260,7 +260,7 @@ try {
 
 ---
 
-## 14. Throwing Exception from catch
+## 🟢 Throwing Exception from catch
 
 • Exception can be re-thrown
 • Control moves to caller
@@ -277,7 +277,7 @@ catch (Exception e) {
 
 ---
 
-## 15. Exception Object (`e`)
+## 🟢 Exception Object (`e`)
 
 • `e` contains exception details
 • Common methods:
