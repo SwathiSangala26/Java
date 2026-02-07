@@ -1,4 +1,4 @@
-## 1. Complete Exception Hierarchy
+## 🟢 Exception Hierarchy
 
 ```
 java.lang.Object
@@ -33,7 +33,7 @@ java.lang.Object
 
 ---
 
-## 2. `java.lang.Object`
+## 🟢 `java.lang.Object`
 
 * Root class of all Java classes
 * Every exception object ultimately extends `Object`
@@ -45,7 +45,7 @@ java.lang.Object
 
 ---
 
-## 3. `java.lang.Throwable`
+## 🟢 `java.lang.Throwable`
 
 * Superclass of all errors and exceptions
 * Only objects of this class (or subclasses) can be:
@@ -61,7 +61,7 @@ Common methods:
 
 ---
 
-## 4. `java.lang.Error`
+## 🟢 `java.lang.Error`
 
 * Represents serious system-level problems
 * Caused by JVM or environment
@@ -82,7 +82,7 @@ Characteristics:
 
 ---
 
-## 5. `java.lang.Exception`
+## 🟢 `java.lang.Exception`
 
 * Represents application-level problems
 * Can be handled using `try–catch`
@@ -93,7 +93,7 @@ Characteristics:
 
 ---
 
-## 6. Checked Exceptions (Compile-Time)
+## 🟢 Checked Exceptions (Compile-Time)
 
 * Checked at compile time
 * Compiler forces handling
@@ -117,7 +117,7 @@ Reason:
 
 ---
 
-## 7. `java.lang.RuntimeException` (Unchecked Exceptions)
+## 🟢 `java.lang.RuntimeException` (Unchecked Exceptions)
 
 * Subclass of `java.lang.Exception`
 * Parent of all unchecked exceptions
@@ -135,7 +135,7 @@ Examples:
 
 ---
 
-## 8. Checked vs Unchecked Exceptions
+## 🟢 Checked vs Unchecked Exceptions
 
 ### Checked Exceptions
 
@@ -153,7 +153,7 @@ Examples:
 
 ---
 
-## 9. Why `RuntimeException` Exists
+## 🟢 Why `RuntimeException` Exists
 
 * Avoids excessive boilerplate code
 * Common mistakes are obvious
@@ -162,7 +162,7 @@ Examples:
 
 ---
 
-## 10. Catching Order Based on Hierarchy
+## 🟢 Catching Order Based on Hierarchy
 
 Rule:
 
@@ -185,7 +185,7 @@ catch (NullPointerException e) { } // unreachable
 
 ---
 
-## 11. Catching `Throwable` or `Error`
+## 🟢 Catching `Throwable` or `Error`
 
 * Allowed but not recommended
 
@@ -206,7 +206,7 @@ Best practice:
 
 ---
 
-## 12. Custom Exceptions and Hierarchy
+## 🟢 Custom Exceptions and Hierarchy
 
 Custom checked exception:
 
@@ -224,7 +224,7 @@ class MyRuntimeException extends RuntimeException { }
 
 ---
 
-## 13. JVM Perspective
+## 🟢 JVM Perspective
 
 * Exception objects are created on the heap
 * Stack trace is maintained internally by JVM
