@@ -1,36 +1,39 @@
 ## 🟢 Definition
 
-• Exception handling is a mechanism to **handle runtime errors**
-• Prevents **abnormal termination** of program
-• Maintains **normal flow of execution**
-• Implemented using:
-– `try`
-– `catch`
-– `finally`
+* Exception handling is a mechanism to **handle runtime errors**
+* Prevents **abnormal termination** of program
+* Maintains **normal flow of execution**
+* Implemented using:
+
+  * `try`
+  * `catch`
+  * `finally`
 
 ---
 
 ## 🟢 What is an Exception?
 
-• An exception is an **unexpected event at runtime**
-• Occurs during program execution
-• Causes program disruption if not handled
+* An exception is an **unexpected event at runtime**
+* Occurs during program execution
+* Causes program disruption if not handled
 
 Examples:
-• Divide by zero
-• Null reference access
-• Invalid array index
-• File not found
+
+* Divide by zero
+* Null reference access
+* Invalid array index
+* File not found
 
 ---
 
 ## 🟢 `try` Block
 
-• Contains **risky code**
-• JVM monitors this block
-• If exception occurs:
-– Remaining code in `try` is skipped
-– Control moves to `catch`
+* Contains **risky code**
+* JVM monitors this block
+* If exception occurs:
+
+  * Remaining code in `try` is skipped
+  * Control moves to `catch`
 
 Syntax:
 
@@ -41,17 +44,18 @@ try {
 ```
 
 Rules:
-• `try` cannot exist alone
-• Must be followed by `catch` or `finally`
-• Cannot have code outside blocks
+
+* `try` cannot exist alone
+* Must be followed by `catch` or `finally`
+* Cannot have code outside blocks
 
 ---
 
 ## 🟢 `catch` Block
 
-• Handles exception thrown from `try`
-• Executes only when exception occurs
-• Prevents program crash
+* Handles exception thrown from `try`
+* Executes only when exception occurs
+* Prevents program crash
 
 Syntax:
 
@@ -62,17 +66,18 @@ catch (ExceptionType e) {
 ```
 
 Key points:
-• Exception type must match
-• If not matched → JVM checks next `catch`
-• If none matches → program terminates
+
+* Exception type must match
+* If not matched → JVM checks next `catch`
+* If none matches → program terminates
 
 ---
 
 ## 🟢 `finally` Block
 
-• Executes **always**
-• Executes whether exception occurs or not
-• Used for **cleanup code**
+* Executes **always**
+* Executes whether exception occurs or not
+* Used for **cleanup code**
 
 Syntax:
 
@@ -83,9 +88,10 @@ finally {
 ```
 
 Common uses:
-• Closing files
-• Closing database connections
-• Releasing resources
+
+* Closing files
+* Closing database connections
+* Releasing resources
 
 ---
 
@@ -102,10 +108,11 @@ try {
 ```
 
 Execution:
-• Exception occurs
-• `catch` executes
-• `finally` executes
-• Program continues
+
+* Exception occurs
+* `catch` executes
+* `finally` executes
+* Program continues
 
 ---
 
@@ -113,31 +120,32 @@ Execution:
 
 ### No Exception
 
-• `try` executes fully
-• `catch` skipped
-• `finally` executes
+* `try` executes fully
+* `catch` skipped
+* `finally` executes
 
 ### Exception Occurs and Caught
 
-• `try` stops at exception
-• Matching `catch` executes
-• `finally` executes
+* `try` stops at exception
+* Matching `catch` executes
+* `finally` executes
 
 ### Exception Occurs and Not Caught
 
-• `try` stops
-• `finally` executes
-• Program crashes
+* `try` stops
+* `finally` executes
+* Program crashes
 
 ---
 
 ## 🟢 Important `finally` Rules
 
-• Executes even if `return` is used
-• Executes even if exception is thrown
-• Does NOT execute if:
-– `System.exit()` is called
-– JVM crashes
+* Executes even if `return` is used
+* Executes even if exception is thrown
+* Does NOT execute if:
+
+  * `System.exit()` is called
+  * JVM crashes
 
 Avoid:
 
@@ -148,15 +156,16 @@ finally {
 ```
 
 Reason:
-• Overrides return value from `try` or `catch`
+
+* Overrides return value from `try` or `catch`
 
 ---
 
 ## 🟢 Multiple `catch` Blocks
 
-• Used to handle **different exception types**
-• JVM checks `catch` blocks **top to bottom**
-• First matching block executes
+* Used to handle **different exception types**
+* JVM checks `catch` blocks **top to bottom**
+* First matching block executes
 
 Syntax:
 
@@ -175,8 +184,9 @@ try {
 ## 🟢 Order of Multiple `catch` Blocks
 
 Rule:
-• **Child exception first**
-• **Parent exception last**
+
+* **Child exception first**
+* **Parent exception last**
 
 Correct:
 
@@ -193,16 +203,17 @@ catch (NullPointerException e) { } // compile-time error
 ```
 
 Reason:
-• Parent catches all child exceptions
-• Child becomes unreachable
+
+* Parent catches all child exceptions
+* Child becomes unreachable
 
 ---
 
 ## 🟢 Generic `catch (Exception e)`
 
-• Handles all exceptions
-• Should be placed **last**
-• Used as fallback handler
+* Handles all exceptions
+* Should be placed **last**
+* Used as fallback handler
 
 Example:
 
@@ -235,14 +246,15 @@ try {
 ```
 
 Reason:
-• `try` must be followed by `catch` or `finally`
+
+* `try` must be followed by `catch` or `finally`
 
 ---
 
 ## 🟢 Nested try–catch
 
-• `try` inside another `try`
-• Used for fine-grained exception handling
+* `try` inside another `try`
+* Used for fine-grained exception handling
 
 Example:
 
@@ -262,8 +274,8 @@ try {
 
 ## 🟢 Throwing Exception from catch
 
-• Exception can be re-thrown
-• Control moves to caller
+* Exception can be re-thrown
+* Control moves to caller
 
 Example:
 
@@ -273,13 +285,14 @@ catch (Exception e) {
 }
 ```
 
-• `finally` still executes
+* `finally` still executes
 
 ---
 
 ## 🟢 Exception Object (`e`)
 
-• `e` contains exception details
-• Common methods:
-– `e.getMessage()`
-– `e.printStackTrace()`
+* `e` contains exception details
+* Common methods:
+
+  * `e.getMessage()`
+  * `e.printStackTrace()`
