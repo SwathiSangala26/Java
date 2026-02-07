@@ -203,30 +203,3 @@ Best practice:
 
 * Catch specific exceptions
 * Avoid catching `Error`
-
----
-
-## 🟢 Custom Exceptions and Hierarchy
-
-Custom checked exception:
-
-```java
-class MyException extends Exception { }
-```
-
-Custom unchecked exception:
-
-```java
-class MyRuntimeException extends RuntimeException { }
-```
-
-* Custom exceptions become part of the same hierarchy
-
----
-
-## 🟢 JVM Perspective
-
-* Exception objects are created on the heap
-* Stack trace is maintained internally by JVM
-* Runtime bounds checking is performed before array access
-* Unhandled exceptions terminate the executing thread
