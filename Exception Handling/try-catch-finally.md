@@ -1,4 +1,4 @@
-## 1️⃣ Definition
+<img width="160" height="148" alt="image" src="https://github.com/user-attachments/assets/5a23ed4b-87ba-41d5-8d87-7e6d865d3c28" />## 1️⃣ Definition
 
 `try–catch–finally` is a mechanism used to:
 
@@ -95,10 +95,10 @@ Program terminates
 
 ✔ Always executes
 ✔ Used for cleanup
-✔ 🧡 Executes even if:
+✔ #🟧 Executes even if:
 
-* 🔶 return statement is present
-* 🟠 exception occurs
+* return statement is present
+* exception occurs
 * catch block executes
 
 ❗ Does NOT execute only if:
