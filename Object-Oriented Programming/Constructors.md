@@ -47,7 +47,7 @@ Class
 * Same name as class
 * No return type (not even void)
 * Called automatically during object creation
-* Can be overloaded
+* 🟧 Can be overloaded
 * Not inherited
 * If no constructor defined → compiler provides default constructor
 * Used for initialization
