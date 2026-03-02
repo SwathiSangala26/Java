@@ -70,7 +70,7 @@ Person p  ───────►          [ Person Object ]
 * Stored in stack
 * Fixed memory size
 * Faster access
-* Cannot be null
+🟧 * Cannot be null
 * Not objects
 
 ---
