@@ -379,7 +379,7 @@ No matter what happens during driving, you must lock the car.
 
 ---
 
-### 9. Can we catch multiple exceptions in single catch? (Java 7+)
+### 🟧 9. Can we catch multiple exceptions in single catch? (Java 7+)
 
 **Answer:** Yes.
 
