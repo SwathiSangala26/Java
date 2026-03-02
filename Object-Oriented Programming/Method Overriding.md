@@ -172,7 +172,7 @@ Explanation:
 8. Can access modifier be reduced?
    ➜ No.
 
-9. What is dynamic method dispatch?
+🟧 9. What is dynamic method dispatch?
    ➜ Runtime selection of overridden method.
 
 10. Can constructors be overridden?
