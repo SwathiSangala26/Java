@@ -95,10 +95,10 @@ Program terminates
 
 ✔ Always executes
 ✔ Used for cleanup
-✔ 🟥 Executes even if:
+✔ 🧡 Executes even if:
 
-* 🟨 return statement is present
-* 🔴 exception occurs
+* 🔶 return statement is present
+* 🟠 exception occurs
 * catch block executes
 
 ❗ Does NOT execute only if:
