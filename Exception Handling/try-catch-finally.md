@@ -1,4 +1,4 @@
-<img width="160" height="148" alt="image" src="https://github.com/user-attachments/assets/5a23ed4b-87ba-41d5-8d87-7e6d865d3c28" />## 1️⃣ Definition
+## 1️⃣ Definition
 
 `try–catch–finally` is a mechanism used to:
 
