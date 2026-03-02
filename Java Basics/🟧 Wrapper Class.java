@@ -1,289 +1,234 @@
-# 1️⃣ Definition
+## 1️⃣ Definition
 
-A **Wrapper Class** is a class that wraps (converts) a primitive data type into an object.
+A **Wrapper Class** in Java is a class that wraps (converts) a primitive data type into an object.
 
-Each primitive type in Java has a corresponding wrapper class inside `java.lang` package.
+Java provides wrapper classes for all primitive types so they can be used in:
+
+* Collections
+* Generics
+* Object-based APIs
+
+Primitive → Wrapper mapping:
+
+```
+byte    → Byte
+short   → Short
+int     → Integer
+long    → Long
+float   → Float
+double  → Double
+char    → Character
+boolean → Boolean
+```
+
+All wrapper classes are in `java.lang` package.
 
 ---
 
-# 2️⃣ Visual Representation
+## 2️⃣ Visual Representation
 
-## 🔹 Primitive (Direct Value)
+### Primitive vs Wrapper
 
 ```
-int a = 10;
-
-Stack
------
-a  ───► 10
+Primitive (int)
+      |
+      |  Boxing
+      v
+Wrapper (Integer)
 ```
 
 ---
 
-## 🔹 Wrapper (Object)
+### Autoboxing & Unboxing
 
 ```
-Integer x = 10;
+int x = 10;
 
-Stack                    Heap
-------                  ----------
-x  ───────────────►     [ Integer Object ]
-                         value = 10
+Integer obj = x;     // Autoboxing
+int y = obj;         // Unboxing
 ```
-
-✔ Wrapper stores value inside an object in heap.
-✔ Variable holds reference (address).
 
 ---
 
-# 3️⃣ Key Features / Properties
+### Memory View
 
-## 🔹 Primitive ↔ Wrapper Mapping
-
-| Primitive | Wrapper Class |
-| --------- | ------------- |
-| byte      | Byte          |
-| short     | Short         |
-| int       | Integer       |
-| long      | Long          |
-| float     | Float         |
-| double    | Double        |
-| char      | Character     |
-| boolean   | Boolean       |
+```
+Stack:  x = 10
+Heap:   Integer object → 10
+```
 
 ---
 
-### ✔ Important Properties
+## 3️⃣ Key Features / Properties
 
-* Located in `java.lang` package
+* Wrap primitive into object
+* Immutable classes
+* Support autoboxing & unboxing
+* Provide utility methods
+* Used in Collections
+* Extend `Number` (except Character & Boolean)
+* Cached values (Integer: -128 to 127)
+* Cannot modify internal value
+
+---
+
+## 4️⃣ Syntax
+
+### Manual Boxing
+
+```java
+Integer obj = Integer.valueOf(10);
+```
+
+---
+
+### Autoboxing
+
+```java
+Integer obj = 10;
+```
+
+---
+
+### Unboxing
+
+```java
+int x = obj;
+```
+
+---
+
+## 5️⃣ Code Example
+
+```java
+public class Main {
+
+    public static void main(String[] args) {
+
+        int primitive = 100;
+
+        // Autoboxing
+        Integer wrapper = primitive;
+
+        // Unboxing
+        int value = wrapper;
+
+        System.out.println(wrapper);
+        System.out.println(value);
+    }
+}
+```
+
+---
+
+## 6️⃣ Use Cases
+
+* Using primitives in Collections
+* Generics
+* Utility methods (parseInt, compare, etc.)
+* Null handling
+* Framework APIs
+* Reflection usage
+
+---
+
+## 7️⃣ Pitfalls / Notes
+
+* ❌ NullPointerException during unboxing
+* ❌ Comparing using `==` instead of equals()
+* ❌ Performance overhead (object creation)
+* ❌ Integer caching confusion
+* ❌ Wrapper objects are immutable
+* ❌ Unnecessary boxing/unboxing
+
+---
+
+## 8️⃣ Real-World Analogy
+
+📦 Gift Wrapping
+
+* Primitive = raw item
+* Wrapper = packed item
+* Needed to use in certain systems
+
+---
+
+## 9️⃣ Best Practices
+
+* Prefer primitives when possible
+* Use equals() for comparison
+* Avoid unnecessary boxing
+* Be careful with null values
+* Understand Integer caching
+* Use valueOf() instead of new
+
+---
+
+## 🔟 Tricky Questions
+
+1. What is wrapper class?
+   ➜ Class that converts primitive into object.
+
+2. Why wrapper classes needed?
+   ➜ To use primitives in Collections and Generics.
+
+3. What is autoboxing?
+   ➜ Automatic conversion of primitive to wrapper.
+
+4. What is unboxing?
+   ➜ Wrapper object to primitive conversion.
+
+5. Are wrapper classes immutable?
+   ➜ Yes.
+
+6. Does Integer cache values?
+   ➜ Yes (-128 to 127).
+
+7. What happens if Integer a = null; int b = a;?
+   ➜ NullPointerException.
+
+8. Can wrapper classes extend other classes?
+   ➜ They extend Number (except Boolean & Character).
+
+9. Which package contains wrapper classes?
+   ➜ java.lang.
+
+10. Difference between Integer and int?
+    ➜ Integer is object; int is primitive.
+
+11. Why equals() instead of ==?
+    ➜ == compares reference; equals compares value.
+
+12. Can wrapper class be used as Map key?
+    ➜ Yes.
+
+13. Is new Integer(10) recommended?
+    ➜ No (use valueOf).
+
+14. What is performance impact of boxing?
+    ➜ Slight overhead.
+
+15. Are wrapper classes thread-safe?
+    ➜ Yes (immutable).
+
+---
+
+## 🧾 Quick Recap / Cheat Sheet
+
+* Wrapper = Primitive → Object
+* Used in Collections
+* Autoboxing & Unboxing
 * Immutable
-* Can be null
-* Required for Collections
-* Provides utility methods (parse, compare, valueOf, etc.)
-
----
-
-# 4️⃣ Syntax
-
-## 🔹 Before Java 5 (Manual Boxing)
-
-```java
-Integer x = new Integer(10);
-```
-
-⚠ Deprecated.
-
----
-
-## 🔹 Using valueOf()
-
-```java
-Integer x = Integer.valueOf(10);
-```
-
----
-
-## 🔹 Autoboxing (Java 5+)
-
-```java
-Integer x = 10;   // Autoboxing
-```
-
----
-
-## 🔹 Unboxing
-
-```java
-int y = x;        // Unboxing
-```
-
----
-
-# 5️⃣ Code Example
-
-```java
-int a = 20;
-Integer b = a;        // Autoboxing
-
-int c = b;            // Unboxing
-
-System.out.println(b); // 20
-```
-
----
-
-### 🔹 Using Utility Methods
-
-```java
-String str = "100";
-int num = Integer.parseInt(str);
-
-System.out.println(num + 10); // 110
-```
-
----
-
-# 6️⃣ Use Cases
-
-✔ When working with Collections:
-
-```java
-ArrayList<Integer> list = new ArrayList<>();
-```
-
-✔ When null values are required
-✔ When using utility methods
-✔ In generics (Generics work only with objects)
-
----
-
-# 7️⃣ Pitfalls / Notes (VERY IMPORTANT)
-
----
-
-### ⚠ 1. Wrapper Classes Are Immutable
-
-```java
-Integer x = 10;
-x = 20;
-```
-
-✔ A new object is created.
-
----
-
-### ⚠ 2. Integer Caching (-128 to 127)
-
-```java
-Integer a = 100;
-Integer b = 100;
-
-System.out.println(a == b); // true
-```
-
-```java
-Integer x = 200;
-Integer y = 200;
-
-System.out.println(x == y); // false
-```
-
-✔ Cache range = -128 to 127
-
----
-
-### ⚠ 3. NullPointerException During Unboxing
-
-```java
-Integer x = null;
-int y = x;   // Runtime error
-```
-
-✔ Unboxing null → NullPointerException
-
----
-
-### ⚠ 4. == vs equals()
-
-```java
-Integer a = 200;
-Integer b = 200;
-
-System.out.println(a == b);       // false
-System.out.println(a.equals(b));  // true
-```
-
-✔ `==` → compares references
-✔ `equals()` → compares values
-
----
-
-# 8️⃣ Real-World Analogy
-
-Primitive = Raw number written on paper.
-
-Wrapper = Number stored inside a box with extra features (methods).
-
-You don’t just have the value — you also get tools to work with it.
-
----
-
-# 9️⃣ Best Practices
-
-✔ Use primitives for performance-critical code
-✔ Use wrappers when working with collections
-✔ Always use `.equals()` for value comparison
-✔ Avoid unnecessary boxing/unboxing
-✔ Prefer `valueOf()` over `new`
-
----
-
-# 🔟 Tricky Questions (With Answers)
-
----
-
-### ❓ 1. Why can't we use int in ArrayList?
-
-Because collections store objects, not primitives.
-
----
-
-### ❓ 2. Is Integer mutable?
-
-No. Wrapper classes are immutable.
-
----
-
-### ❓ 3. What is Autoboxing?
-
-Automatic conversion of primitive to wrapper object.
-
----
-
-### ❓ 4. What is Unboxing?
-
-Automatic conversion of wrapper object to primitive.
-
----
-
-### ❓ 5. Why does Integer 100 == 100 return true?
-
-Because of Integer cache (-128 to 127).
-
----
-
-### ❓ 6. Can wrapper objects be null?
-
-Yes.
-
----
-
-### ❓ 7. What happens when unboxing null?
-
-NullPointerException.
-
----
-
-### ❓ 8. Difference between parseInt() and valueOf()?
-
-| parseInt()            | valueOf()              |
-| --------------------- | ---------------------- |
-| Returns primitive int | Returns Integer object |
-
----
-
-# 🧾 Quick Recap / Cheat Sheet
-
-```
-Wrapper Class
--------------
-• Converts primitive → object
-• Immutable
-• Required for collections
-• Supports utility methods
-• Can be null
-• Integer cache (-128 to 127)
-• Autoboxing / Unboxing supported
-```
+* Integer cache (-128 to 127)
+* valueOf() preferred
+* equals() for comparison
+* Can cause NPE during unboxing
+* Extend Number (except Boolean, Character)
+* Part of java.lang
+* Required for Generics
+* Object-based APIs need wrapper
+* Slight performance overhead
+* Important interview topic
+* Understand caching behavior
 
 ---
