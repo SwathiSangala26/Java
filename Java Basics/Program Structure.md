@@ -86,7 +86,7 @@ public class Example {
         System.out.println("Number: " + number);
     }
 
-    public static void main(String[] args) {   // main method
+    🟧 public static void main(String[] args) {   // main method
         Example obj = new Example(10);
         obj.display();
     }
