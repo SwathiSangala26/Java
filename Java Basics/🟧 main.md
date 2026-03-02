@@ -50,7 +50,7 @@ String[]   → Command-line arguments
 * Must return void
 * Must accept String array
 * JVM calls it automatically
-* Can be overloaded (but only one valid signature used)
+🟧 * Can be overloaded (but only one valid signature used)
 * Can throw exceptions
 
 ---
