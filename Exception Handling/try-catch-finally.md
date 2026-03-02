@@ -123,7 +123,7 @@ try {
 
 ---
 
-### Multiple Catch
+### 🟧 Multiple Catch
 
 ```java
 try {
