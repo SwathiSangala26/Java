@@ -101,7 +101,7 @@ Program terminates
 * exception occurs
 * catch block executes
 
-❗ Does NOT execute only if:
+🟧 Does NOT execute only if:
 
 * JVM crashes
 * System.exit() is called
