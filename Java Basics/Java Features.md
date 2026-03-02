@@ -333,6 +333,25 @@ Yes. Bytecode is independent of processor architecture.
 **Answer:**
 To increase security and avoid direct memory manipulation.
 
+### 🟧 Q9: Is Java partially object-oriented? Why?
+
+**Answer:**
+Yes, Java is considered partially object-oriented because it supports primitive data types like int, double, char, boolean, etc., which are not objects.
+
+In a purely object-oriented language, everything must be an object.
+However, in Java, primitive types are not objects, so it is not fully object-oriented.
+
+Advantages of this approach:
+
+Performance Improvement –
+Primitive types are stored in stack memory and are faster than objects.
+
+Memory Efficiency –
+Primitives consume less memory compared to wrapper objects.
+
+Flexibility –
+Java allows both object-oriented features and efficient primitive handling.
+
 ---
 
 ## 🧾 Quick Recap / Cheat Sheet
