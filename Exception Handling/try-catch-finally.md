@@ -282,7 +282,7 @@ Does NOT execute if:
 
 ---
 
-### ❗ 4. 🟧 try without catch is allowed only if finally exists
+### 🟧❗ 4. try without catch is allowed only if finally exists
 
 Valid:
 
