@@ -207,6 +207,9 @@ Explanation:
 15. Why main method is static?
     ➜ To run without creating object.
 
+🟧 16. Can we overload a static method?
+    ➜ Yes. Static methods can be overloaded because overloading depends on method parameters, not on whether the method is static or instance.
+
 ---
 
 ## 🧾 Quick Recap / Cheat Sheet
