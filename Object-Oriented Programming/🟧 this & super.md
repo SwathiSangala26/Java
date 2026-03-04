@@ -13,7 +13,7 @@ Used to:
 
 ---
 
-### `super`
+### 🟧 `super`
 
 `super` is a reference variable that refers to the **parent class object**.
 
