@@ -282,7 +282,7 @@ JRE:
 
 ---
 
-# 🔹 JDK (Java Development Kit)
+# 🟧 🔹 JDK (Java Development Kit)
 
 ---
 
