@@ -46,7 +46,7 @@ These features explain **why Java is widely used** and what makes it technically
 ### 🔹 1. Simple
 
 * Easy syntax (similar to C++)
-* No pointers
+🟧 * No pointers
 * Automatic memory management
 * No operator overloading
 
