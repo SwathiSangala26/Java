@@ -296,7 +296,7 @@ Because collections store objects, not primitive types.
 
 ---
 
-### ❓ 7. What is the default value of local variables?
+### 🟧 7. What is the default value of local variables?
 
 ❌ No default value. Must initialize.
 
