@@ -207,6 +207,10 @@ public class Main {
 15. When should LinkedList be preferred?
     ➜ When frequent insertions/deletions are required.
 
+🟧 16. Why is delete function faster in Linked list than array?
+   ➜ In a Linked List, deletion only requires changing references (pointers) of adjacent nodes.
+     In an Array, deleting an element requires shifting all subsequent elements to maintain order, which takes more time.
+
 ---
 
 ## 🧾 Quick Recap / Cheat Sheet
