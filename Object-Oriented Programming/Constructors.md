@@ -198,6 +198,10 @@ Constructor prepares object for use.
 15. Can interface have constructor?
     ➜ No.
 
+16. Can a constructor return a value?
+
+    ➜ A constructor cannot return any value, not even void, because its purpose is to initialize an object, not to return data.
+
 ---
 
 ## 🧾 Quick Recap / Cheat Sheet
