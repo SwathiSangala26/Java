@@ -91,7 +91,7 @@ Program terminates
 
 ---
 
-### 🔹 finally Block
+### 🟧 🔹 finally Block
 
 ✔ Always executes
 ✔ Used for cleanup
