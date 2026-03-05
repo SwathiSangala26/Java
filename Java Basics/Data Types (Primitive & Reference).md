@@ -175,7 +175,7 @@ System.out.println(p1.name); // Anirudh
 
 # 7️⃣ Pitfalls / Notes (Interview Important)
 
-### ⚠ Default Values (Only for instance variables)
+### ⚠ 🟧 Default Values (Only for instance variables)
 
 ```
 Instance Variable → Gets default value
